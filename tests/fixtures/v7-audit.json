@@ -1,0 +1,87 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "lodash": {
+      "name": "lodash",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1065,
+          "name": "lodash",
+          "dependency": "lodash",
+          "title": "Prototype Pollution",
+          "url": "https://npmjs.com/advisories/1065",
+          "severity": "critical",
+          "cwe": ["CWE-1321"],
+          "range": "<4.17.21"
+        }
+      ],
+      "effects": [],
+      "range": "<4.17.21",
+      "nodes": ["node_modules/lodash"],
+      "fixAvailable": {
+        "name": "lodash",
+        "version": "4.17.21",
+        "isSemVerMajor": false
+      }
+    },
+    "axios": {
+      "name": "axios",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1594,
+          "name": "axios",
+          "dependency": "axios",
+          "title": "Server-Side Request Forgery in axios",
+          "url": "https://npmjs.com/advisories/1594",
+          "severity": "high",
+          "cwe": ["CWE-918"],
+          "range": "<0.21.2"
+        }
+      ],
+      "effects": [],
+      "range": "<0.21.2",
+      "nodes": ["node_modules/axios"],
+      "fixAvailable": {
+        "name": "axios",
+        "version": "0.21.2",
+        "isSemVerMajor": false
+      }
+    },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1779,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "Inefficient Regular Expression Complexity in minimatch",
+          "url": "https://npmjs.com/advisories/1779",
+          "severity": "moderate",
+          "cwe": ["CWE-1333"],
+          "range": "<3.0.5"
+        }
+      ],
+      "effects": [],
+      "range": "<3.0.5",
+      "nodes": ["node_modules/minimatch"],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "critical": 1,
+      "high": 1,
+      "moderate": 1,
+      "low": 0,
+      "info": 0,
+      "total": 3
+    },
+    "totalDependencies": 342
+  }
+}

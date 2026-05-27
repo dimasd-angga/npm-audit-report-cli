@@ -1,0 +1,58 @@
+{
+  "auditReportVersion": 1,
+  "advisories": {
+    "1065": {
+      "id": 1065,
+      "title": "Prototype Pollution",
+      "module_name": "lodash",
+      "severity": "critical",
+      "url": "https://npmjs.com/advisories/1065",
+      "vulnerable_versions": "<4.17.21",
+      "patched_versions": ">=4.17.21",
+      "cves": ["CVE-2021-23337"],
+      "findings": [
+        { "paths": ["lodash"] },
+        { "paths": ["express>lodash"] }
+      ],
+      "fixAvailable": true
+    },
+    "1594": {
+      "id": 1594,
+      "title": "Server-Side Request Forgery in axios",
+      "module_name": "axios",
+      "severity": "high",
+      "url": "https://npmjs.com/advisories/1594",
+      "vulnerable_versions": "<0.21.2",
+      "patched_versions": ">=0.21.2",
+      "cves": ["CVE-2021-3749"],
+      "findings": [
+        { "paths": ["axios"] }
+      ],
+      "fixAvailable": true
+    },
+    "1779": {
+      "id": 1779,
+      "title": "Inefficient Regular Expression Complexity in minimatch",
+      "module_name": "minimatch",
+      "severity": "moderate",
+      "url": "https://npmjs.com/advisories/1779",
+      "vulnerable_versions": "<3.0.5",
+      "patched_versions": ">=3.0.5",
+      "cves": ["CVE-2022-3517"],
+      "findings": [
+        { "paths": ["minimatch"] }
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "critical": 1,
+      "high": 1,
+      "moderate": 1,
+      "low": 0,
+      "info": 0
+    },
+    "totalDependencies": 342
+  }
+}
