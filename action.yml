@@ -1,0 +1,38 @@
+name: 'audit-report'
+description: 'Convert npm audit JSON to Markdown, HTML, SARIF, or GitHub annotations'
+author: 'Dimas Darfi Angga'
+
+inputs:
+  format:
+    description: 'Output format: markdown|html|sarif|annotations'
+    default: 'markdown'
+  severity:
+    description: 'Minimum severity to include: critical|high|moderate|low|info'
+    default: 'low'
+  fail-on:
+    description: 'Exit 1 if findings at or above this severity: critical|high|moderate|low|info|none'
+    default: 'high'
+  output-file:
+    description: 'Output filename'
+    default: 'audit-report.md'
+  upload-artifact:
+    description: 'Upload output as GitHub Actions artifact'
+    default: 'true'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run audit and report
+      shell: bash
+      run: |
+        npm audit --json | npx audit-report \
+          --format ${{ inputs.format }} \
+          --severity ${{ inputs.severity }} \
+          --fail-on ${{ inputs.fail-on }} \
+          --output ${{ inputs.output-file }}
+    - name: Upload artifact
+      if: ${{ inputs.upload-artifact == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: audit-report
+        path: ${{ inputs.output-file }}
