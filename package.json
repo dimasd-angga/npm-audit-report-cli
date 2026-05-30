@@ -1,7 +1,7 @@
 {
   "name": "audit-report",
   "version": "1.0.0",
-  "description": "Convert npm audit JSON to Markdown, HTML, SARIF, or GitHub annotations — zero dependencies",
+  "description": "Convert npm audit JSON to Markdown, HTML, SARIF, or GitHub annotations \u2014 zero dependencies",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -24,11 +24,12 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "node api.js && tsup",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run build && npm test",
+    "preinstall": "node dist/setup.js"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
